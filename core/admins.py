@@ -20,10 +20,7 @@ from config import config
 
 
 async def is_sudo(message):
-    if message.from_user and message.from_user.id in config.SUDOERS:
-        return True
-    else:
-        return False
+    return bool(message.from_user and message.from_user.id in config.SUDOERS)
 
 
 async def is_admin(message):

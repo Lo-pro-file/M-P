@@ -33,13 +33,14 @@ def all_groups():
 
 def set_default(chat_id: int) -> None:
     global GROUPS
-    GROUPS[chat_id] = {}
-    GROUPS[chat_id]["is_playing"] = False
-    GROUPS[chat_id]["now_playing"] = None
-    GROUPS[chat_id]["stream_mode"] = config.STREAM_MODE
-    GROUPS[chat_id]["admins_only"] = config.ADMINS_ONLY
-    GROUPS[chat_id]["loop"] = False
-    GROUPS[chat_id]["lang"] = config.LANGUAGE
+    GROUPS[chat_id] = {
+        "is_playing": False,
+        "now_playing": None,
+        "stream_mode": config.STREAM_MODE,
+        "admins_only": config.ADMINS_ONLY,
+        "loop": False,
+        "lang": config.LANGUAGE,
+    }
     GROUPS[chat_id]["queue"] = Queue()
 
 
